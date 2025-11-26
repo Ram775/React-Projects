@@ -27,11 +27,11 @@ const Search = () => {
       if (data && data[0].Status === "Success") {
         setResult(data[0].PostOffice);
       } else {
-        toString.error("Invalid pincode you entered");
+        toast.error("Invalid pincode you entered");
         setResult([]);
       }
     } catch (err) {
-      alert("Something went wrong");
+      toast.error("Something went wrong");
       console.error(err);
     }
   };
