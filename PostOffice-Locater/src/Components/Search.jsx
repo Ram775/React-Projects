@@ -39,14 +39,14 @@ const Search = () => {
         <div className="flex flex-col items-center justify-center gap-3">
           <input
             onChange={(e) => setInp(e.target.value)}
-            className=" w-[50vw] border-red-600 border-2 h-[6vh] rounded-md font-bold text-[1.5vw] text-center "
-            type="number"
+            className="w-100  sm:w-full md:max-w-200 lg:max-w-300 xl:max-w-300 border-red-600 border-2 h-[6vh] rounded-md font-bold  text-center "
+            type="tel"
             maxLength={6}
             placeholder="Enter your pincode...."
           />
           <button
             onClick={handleClick}
-            className="px-87 hover:-translate-y-1 hover:bg-red-500 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl  duration-400  py-2 cursor-pointer text-white text-[1.5vw]  font-bold rounded bg-black"
+            className="px-15 mb-100 hover:-translate-y-1 hover:bg-red-500 sm:text-2xl md:text-3xl lg:text-4xl   duration-400  py-3 cursor-pointer text-white   font-bold rounded bg-black"
           >
             Search
           </button>
@@ -54,7 +54,7 @@ const Search = () => {
       </div>
 
       {result.length > 0 && (
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-20">
           {result.map((item, index) => (
             <div
               key={index}
