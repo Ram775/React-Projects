@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Search = () => {
   const [inp, setInp] = useState("");
@@ -6,12 +9,12 @@ const Search = () => {
 
   const handleClick = async () => {
     if (!inp) {
-      alert("Please enter pincode");
+      toast.warning("Please Enter Pincode");
       return;
     }
 
     if (inp.length !== 6) {
-      alert("Please enter a 6-digit pincode");
+      toast.warning("Please enter  6-digit pincode");
       return;
     }
 
@@ -24,7 +27,7 @@ const Search = () => {
       if (data && data[0].Status === "Success") {
         setResult(data[0].PostOffice);
       } else {
-        alert("Invalid pincode you entered");
+        toString.error("Invalid pincode you entered");
         setResult([]);
       }
     } catch (err) {
@@ -35,8 +38,9 @@ const Search = () => {
 
   return (
     <div>
-      <div className="h-20  mt-5">
-        <div className="flex flex-col items-center justify-center gap-3">
+      <h1 className="mt-5 text-center text-4xl font-bold underline">PostOffice-locator</h1>
+      <div className="h-20 p-3 mt-5">
+        <div className="flex flex-col items-center justify-center gap-5">
           <input
             onChange={(e) => setInp(e.target.value)}
             className="w-100  sm:w-full md:max-w-200 lg:max-w-300 xl:max-w-300 border-red-600 border-2 h-[6vh] rounded-md font-bold  text-center "
@@ -107,6 +111,7 @@ const Search = () => {
           ))}
         </div>
       )}
+      <ToastContainer />
     </div>
   );
 };
