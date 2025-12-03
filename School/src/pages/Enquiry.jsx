@@ -31,8 +31,8 @@ export default function Enquiry() {
       });
 
       toast.success("✅ Your enquiry has been submitted successfully!", {
-        position: "top-center",
-        autoClose: 3000,
+        position: "center",
+        autoClose: 1000,
         theme: "colored",
       });
 
